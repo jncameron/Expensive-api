@@ -39,7 +39,8 @@ namespace Expensive.DbContexts
                 {
                     Id = 1,
                     Comment = "Origin Energy Monthly Electricity Bill",
-                    ExpenseId = 1
+                    ExpenseId = 1,
+                    Amount = 10
                 });
         }
 

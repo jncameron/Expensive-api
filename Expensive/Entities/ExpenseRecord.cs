@@ -15,6 +15,7 @@ namespace Expensive.Entities
         [ForeignKey("ExpenseId")]
         public Expense? Expense { get; set; }
         public int ExpenseId { get; set; }
+        public decimal Amount { get; set; }
 
         //[ForeignKey("ExpenseTypeId")]
         //public ExpenseType? ExpenseType { get; set; }

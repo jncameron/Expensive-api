@@ -2,6 +2,7 @@
 using Expensive.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Expensive.Migrations
 {
     [DbContext(typeof(UserExpensesContext))]
-    partial class UserExpensesContextModelSnapshot : ModelSnapshot
+    [Migration("20220720065016_ExpenseRecordAmount")]
+    partial class ExpenseRecordAmount
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.6");

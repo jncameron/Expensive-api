@@ -30,7 +30,8 @@ namespace Expensive.Controllers
                 {
                     Id = expense.Id,
                     Expense = expense.ExpenseId,
-                    Comment = expense.Comment
+                    Comment = expense.Comment,
+                    Amount = expense.Amount
                 });
                 ;
             }
@@ -49,6 +50,7 @@ namespace Expensive.Controllers
             result.Id = expenseRecord.Id;
             result.Expense = expenseRecord.ExpenseId;
             result.Comment = expenseRecord.Comment;
+            result.Amount = expenseRecord.Amount;
 
             return Ok(result);
         }
@@ -60,6 +62,8 @@ namespace Expensive.Controllers
             expenseRecordToAdd.Id = expenseRecordDto.Id;
             expenseRecordToAdd.ExpenseId = expenseRecordDto.Expense;
             expenseRecordToAdd.Comment = expenseRecordDto.Comment;
+            expenseRecordToAdd.Amount = expenseRecordDto.Amount;
+
 
             _userExpenseRepository.AddExpenseRecordAsync(expenseRecordToAdd);
 

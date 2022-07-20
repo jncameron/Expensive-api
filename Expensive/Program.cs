@@ -12,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<UserExpensesContext>(dbContextOptions => dbContextOptions.UseSqlite("Data Source=UserExpenses.db"));
+builder.Services.AddCors(opt => opt.AddPolicy("CorsPolicy", policy => policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000")));
 
 builder.Services.AddScoped<IUserExpenseRepository, UserExpenseRepository>();
 
@@ -27,6 +28,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseRouting();
+
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 
